@@ -7,7 +7,7 @@ const CronJob = require('cron').CronJob;
 class MenuLeft extends HTMLElement{
     constructor() {
         super();
-        this.city = 'DKIJakarta';
+        this.city = 'Richmond';
     }
 
     render() {
@@ -16,12 +16,12 @@ class MenuLeft extends HTMLElement{
             <img src="../icon.png" alt="Logo">
             <aside class="menu">
                 <ul class="menu-list">
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "DKIJakarta")' class=${this.city === 'DKIJakarta' ? 'is-active':''}>Jakarta</a></li>
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "Bali")' class=${this.city === 'Bali' ? 'is-active':''}>Bali</a></li>
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "DIYogyakarta")' class=${this.city === 'DIYogyakarta' ? 'is-active':''}>DI Yogyakarta</a></li>
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "SumateraUtara")' class=${this.city === 'SumateraUtara' ? 'is-active':''}>Sumatera Utara</a></li>
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "Lampung")' class=${this.city === 'Lampung' ? 'is-active':''}>Lampung</a></li>
-                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "Aceh")' class=${this.city === 'Aceh' ? 'is-active':''}>Aceh</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "Richmond")' class=${this.city === 'DKIJakarta' ? 'is-active':''}>Jakarta</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "Vancouver")' class=${this.city === 'Bali' ? 'is-active':''}>Bali</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "george town")' class=${this.city === 'DIYogyakarta' ? 'is-active':''}>DI Yogyakarta</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "kelowna")' class=${this.city === 'SumateraUtara' ? 'is-active':''}>Sumatera Utara</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "kamploops")' class=${this.city === 'Lampung' ? 'is-active':''}>Lampung</a></li>
+                    <li><a onclick='document.getElementsByTagName("menu-left")[0].setAttribute("city", "burnaby")' class=${this.city === 'Aceh' ? 'is-active':''}>Aceh</a></li>
                 </ul>
             </aside>        
         `;
@@ -32,7 +32,7 @@ class MenuLeft extends HTMLElement{
     autoUpdateData() {
         const job = new CronJob('0 0 * * *', () => {
             this.render();
-        }, null, true, 'Asia/Jakarta');
+        }, null, true, 'North America/Canada');
         
         job.start();
     }
@@ -49,7 +49,7 @@ class MenuLeft extends HTMLElement{
     }
 
     attributeChangedCallback(city, oldValue, newValue) {
-        console.log(`woi`);
+        console.log(`wow`);
         if (oldValue !== newValue) {            
             this[city] = newValue;
             this.render();
